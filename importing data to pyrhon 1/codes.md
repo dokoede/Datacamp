@@ -1,8 +1,25 @@
-context manager
-`with open('file_name.txt') as file`
+```
+# Open a file: file
+file = open('moby_dick.txt', mode = 'r')
 
-to print first few line
-`print(file.readline())`
+# Print it
+print(file.read())
+
+# Check whether file is closed
+print(file.closed)
+
+# Close file
+file.close()
+
+# Check whether file is closed
+print(file.closed)
+```
+
+- context manager
+  `with open('file_name.txt') as file`
+
+- to print first few line
+  `print(file.readline())`
 
 ## Importing flat file (csv, txt)
 
@@ -80,6 +97,28 @@ file = 'titanic.csv'
 # Read the file into a DataFrame: df
 df = pd.read_csv(file)
 
-# View the head of the DataFrame (first 5 element)
+# View the head of the DataFrame (first 5 rows)
 df.head()
+```
+
+### building a numpy array from pandas dataframe
+
+- we do this using .values()
+
+example:
+
+```
+# Assign the filename: file
+file = 'digits.csv'
+
+# Read the first 5 rows of the file into a DataFrame:
+data =pd.read_csv('digits.csv', nrows=5, header = None)
+
+
+# Build a numpy array from the DataFrame: data_array
+
+data_array = data.values
+
+# Print the datatype of data_array to the shell
+print(type(data_array))
 ```

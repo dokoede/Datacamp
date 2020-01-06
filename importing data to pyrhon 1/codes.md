@@ -4,12 +4,12 @@ context manager
 to print first few line
 `print(file.readline())`
 
-##Importing flat file (csv, txt)
+## Importing flat file (csv, txt)
 
-*rows-record
-*A record in a flat file is composed of fields or attributes, each of which contains at most one item of information.
+- rows-record
+- A record in a flat file is composed of fields or attributes, each of which contains at most one item of information.
 
-###Using Numpy
+### Using Numpy
 
 ```
 # Import package

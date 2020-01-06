@@ -1,3 +1,5 @@
+## importing text files
+
 ```
 # Open a file: file
 file = open('moby_dick.txt', mode = 'r')

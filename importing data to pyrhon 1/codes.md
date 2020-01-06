@@ -25,3 +25,27 @@ digits = np.loadtxt(file, delimiter=',')
 print(type(digits))
 
 ```
+
+### Customizing your NumPy import
+
+There are a number of arguments that np.loadtxt() takes that you'll find useful:
+
+- delimiter changes the delimiter that loadtxt() is expecting.
+  You can use ',' for comma-delimited.
+  You can use '\t' for tab-delimited.
+- skiprows allows you to specify how many rows (not indices) you wish to skip
+- usecols takes a list of the indices of the columns you wish to keep.
+
+```
+# Import numpy
+import numpy as np
+
+# Assign the filename: file
+file = 'digits_header.txt'
+
+# Load the data: data
+data = np.loadtxt(file, delimiter='\t', skiprows=1)
+
+# Print data
+print(data)
+```

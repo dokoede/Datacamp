@@ -44,8 +44,42 @@ import numpy as np
 file = 'digits_header.txt'
 
 # Load the data: data
-data = np.loadtxt(file, delimiter='\t', skiprows=1)
+data = np.loadtxt(file, delimiter='\t', skiprows=1, usecols=[0,2])
 
 # Print data
 print(data)
+```
+
+#### Working with mixed dataatypes
+
+- the function np.loadtxt() wont work use this instead
+
+```
+data = np.genfromtxt('titanic.csv', delimiter=',', names=True, dtype=None)
+```
+
+- Here, the first argument is the filename, the second specifies the delimiter , and the third argument names tells us there is a header.
+
+-Accessing rows and columns of structured arrays is super-intuitive: to get the ith row, merely execute data[i] and to get the column with name 'Fare', execute data['Fare']
+
+- just like ng.genfromtxt() we can also use np.recfromcsv(), except that its default dtype is none, delimeter is ',' and names=True
+
+```
+data = np.recfromcsv('filename.txt')
+```
+
+## Using Pandas to import files as dataframe
+
+```
+# Import pandas as pd
+import pandas as pd
+
+# Assign the filename: file
+file = 'titanic.csv'
+
+# Read the file into a DataFrame: df
+df = pd.read_csv(file)
+
+# View the head of the DataFrame (first 5 element)
+df.head()
 ```
